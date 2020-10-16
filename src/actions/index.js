@@ -11,7 +11,7 @@ export function addRecipe({day,recipe,meal}){
     }
 }
 
-export function removeFromCalender({day,meal}){
+export function removeFromCalendar({day,meal}){
     return {
         type:REMOVE_FROM_CALENDAR,
         day,
