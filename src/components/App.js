@@ -14,7 +14,7 @@ class App extends Component {
 }
 // connection component such that it can access the redux store
 // it tells how we can map a redux state to props of a specific component
-function mapStateToProps (calendar) {
+function mapStateToProps ({calendar,food}) {
 	const dayOrder = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday']
   
 	return {
@@ -22,7 +22,7 @@ function mapStateToProps (calendar) {
 		day,
 		meals: Object.keys(calendar[day]).reduce((meals, meal) => {
 		  meals[meal] = calendar[day][meal]
-			? calendar[day][meal]
+			? food[calendar[day][meal]]
 			: null
   
 		  return meals
